@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Model folder (absolute path)
-MODEL_DIR = os.path.join(script_dir, '..', 'lane_segmentation')
+MODEL_DIR = os.path.join(script_dir, '..', 'model')
 
 # New data folder (absolute path)
 NEW_DATA_DIR = os.path.join(script_dir, '..', 'data', 'new_samples')
@@ -82,9 +82,15 @@ for file in csv_files:
     all_preds_summary[os.path.basename(file)] = summary
 
 # ------------------------
-# VISUALIZE PREDICTIONS
+# PRINT AND VISUALIZE PREDICTIONS
 # ------------------------
 for fname, summary in all_preds_summary.items():
+    # Print textual summary
+    print(f"\nPredicted traffic distribution for {fname}:")
+    for label, count in summary.items():
+        print(f"  {label}: {count} samples")
+    
+    # Plot bar chart
     summary.plot(kind='bar', color=['green', 'red'])
     plt.title(f"Predicted Traffic Distribution - {fname}")
     plt.xlabel("Traffic Type")
@@ -92,4 +98,4 @@ for fname, summary in all_preds_summary.items():
     plt.xticks(rotation=0)
     plt.show()
 
-print("[+] All predictions processed and visualized successfully.")
+print("[+] All predictions processed, printed, and visualized successfully.")
