@@ -1,0 +1,15 @@
+
+# Ignore dataset
+/data/*
+!/data/.keep
+
+# Python cache
+__pycache__/
+*.pyc
+
+# virtual env
+venv/
+env/
+
+# Model binaries
+models/*.pkl
