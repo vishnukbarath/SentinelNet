@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 # ------------------------
 # CONFIGURATION
 # ------------------------
-MODEL_DIR = r"../lane_segmentation"  # folder where model, scaler, and encoder are saved
+MODEL_DIR = r"C:\Users\vishn\Documents\SentinelNet\lane_segmentation"
 NEW_DATA_DIR = r"../data/new_samples"  # folder with new traffic CSVs
 OUTPUT_DIR = r"../data/predictions"  # folder to save predictions
 
